@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "MentorInformation";
+}
+
+<h2>MentorInformation</h2>
+<a class="btn btn-warning" href="~/M_Mentor/M_MentorUpdate/@Model.Id" role="button">Update</a>
+<a class="btn btn-danger" href="~/M_Mentor/M_MentorDelete/@Model.Id" role="button">Delete</a>
+<a class="btn btn-warning" href="~/M_Mentor/M_MentorCourseDetails" role="button">Course details</a>
+<a href="~/M_Student/StudentAdd" class="btn btn-primary">STUDENT ADD </a>
+<a class="btn btn-danger" href="~/M_Mentor/M_MentorLogOut" role="button">LOGOUT</a>
+
+
+
+<form action=" " method="">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Password</th>
+                <th scope="col">Photo</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Institution</th>
+                <th scope="col">IsValid</th>
+
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+
+
+            <tr>
+                <th scope="row">@Model.Id</th>
+                <td>@Model.Name</td>
+                <td>@Model.Address</td>
+                <td>@Model.Email</td>
+                <td>@Model.Phone</td>
+                <td>@Model.Password</td>
+                <td>@Model.Photo</td>
+                <td>@Model.Gender</td>
+                <td>@Model.Institution</td>
+                <td>@Model.IsValid</td>
+
+
+
+            </tr>
+
+
+        </tbody>
+    </table>
+</form>

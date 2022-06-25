@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "M_MentorViewAnswer";
+}
+
+<h2>M_MentorViewAnswer</h2>
+
+<div class="row">
+    <div class="col-lg-6">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">STUDENTID</th>
+                    <th scope="col">ASSIGNMENTID</th>
+                    <th scope="col">ANSWER</th>
+                    <th scope="col">DATE</th>
+
+
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+
+               
+                    <tr>
+                        <th scope="row">@Model.Id</th>
+                        <td>@Model.StudentId</td>
+                        <td>@Model.AssignmentId</td>
+                        <td>@Model.Answer</td>
+                        <td>@Model.Date</td>
+
+                    </tr>
+                
+        </table>
+
+
+
+    </div>
+    <div class="col-lg-6 bg-danger">
+        <form action="~/M_Mentor/M_MentorStudentResult" method="post">
+
+            <h3>Mark</h3> <input type="text" name="Mark" value="" class="form-control" />
+
+            <h3>Comment</h3> <input type="text" name="Comment" value="" class="form-control" />
+
+            <h3>Date</h3> <input type="date" name="Date" value="" class="form-control" />
+
+            <h3>BackResult</h3> <input type="text" name="BackResult" value="" class="form-control" />
+
+           
+
+            <button type="submit" class="bg-success">Submit</button>
+        </form>
+
+       
+
+
+
+    </div>
+</div>

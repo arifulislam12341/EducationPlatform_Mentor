@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "M_MentorUpdate";
+}
+
+<h2>M_MentorUpdate</h2>
+
+<form action="" method="post">
+    <h3>ID</h3> <input type="text" name="Id" value="@(Model.Id)" class="form-control" disabled />
+
+
+    <h3>NAME</h3> <input type="text" name="Name" value="@(Model !=null ? Model.Name:"")" class="form-control" />
+   
+    <h3>Address</h3> <input type="text" name="Address" value="@(Model !=null ? Model.Address:"")" class="form-control" />
+   
+    <h3>Email</h3> <input type="email" name="Email" value="@(Model !=null ? Model.Email:"")" class="form-control" />
+   
+    <h3>Phone</h3> <input type="text" name="Phone" value="@(Model !=null ? Model.Phone:"")" class="form-control" />
+  
+    <h3>Password</h3> <input type="password" name="Password" value="@(Model !=null ? Model.Password :"")" class="form-control" />
+  
+    <h3>Photo</h3> <input type="image" name="Photo" value="@(Model !=null ? Model.Photo:"")" class="form-control" />
+   
+    <h3>Gender</h3> <input type="text" name="Gender" value="@(Model !=null ? Model.Gender:"")" class="form-control" />
+ 
+    <h3>Institute</h3> <input type="text" name="Institution" value="@(Model !=null ? Model.Institution:"")" class="form-control" disabled/>
+ 
+  
+
+
+
+
+
+
+
+
+
+    <br />
+    <button type="submit" class="btn btn-success">Update</button>
+
+</form>

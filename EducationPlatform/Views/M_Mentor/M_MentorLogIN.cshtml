@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "M_MentorLogIN";
+}
+
+
+<h2>M_MentorLogIN</h2>
+<form action="" method="post">
+    <h3>Email</h3>
+    <input type="email" name="Email" value="@(Model !=null ? Model.Email:"")" class="form-control" />
+
+    <h3>Password</h3>
+    <input type="password" name="Password" value="@(Model !=null ? Model.Password:"")" class="form-control" />
+
+    <button type="submit" class="btn btn-success">LOGIN</button>
+
+    <h3>@ViewBag.log</h3>
+</form>

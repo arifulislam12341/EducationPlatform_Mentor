@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "M_MentorTrackStudent";
+}
+
+<h2>M_MentorTrackStudent</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">STUDENTID</th>
+           
+
+
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+
+        @foreach (var p in Model)
+        {
+            <tr>
+                <th scope="row">@p.Id</th>
+                <td>@p.StudentId</td>
+
+                <th>
+                    <a class="btn btn-warning" href="~/M_Mentor/M_MentorViewAnswer/@p.StudentId" role="button">View Answer Script</a>
+                </th>
+            </tr>
+        }
+</table>
+

@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "M_MentorStudentId";
+}
+
+<h2>M_MentorStudentId</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+
+        @foreach (var p in Model)
+        {
+            <tr>
+                <th scope="row">@p.StudentId</th>
+
+
+            </tr>
+        <td>
+            <a class="btn btn-warning" href="~/M_Mentor/M_MentorStudentList/@p.StudentId" role="button">STUDENT INFORMATION</a>
+
+        </td>
+        <td>
+            <a class="btn btn-danger" href="~/M_Mentor/M_MentorStudentReview/@p.StudentId" role="button">REVIEW STUDENTS</a>
+        </td>
+
+        <td>
+            <a class="btn btn-danger" href="~/M_Mentor/M_MentorStudentCertificate/@p.StudentId" role="button">RECOMMAND CERTIFICATE</a>
+        </td>
+    }
+
+
+        </tbody>
+    </table>
