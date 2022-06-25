@@ -274,6 +274,8 @@
     <Content Include="Views\M_Mentor\M_MentorViewAnswer.cshtml" />
     <Content Include="Views\M_Mentor\M_MentorTrackStudent.cshtml" />
     <Content Include="Views\M_Mentor\M_MentorAllStudentResults.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorConfirmDelete.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorSeeNotice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

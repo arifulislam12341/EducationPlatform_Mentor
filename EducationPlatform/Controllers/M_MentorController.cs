@@ -33,13 +33,22 @@ namespace EducationPlatform.Controllers
 
             return View();
         }
-        public ActionResult M_MentorDelete(int id)
+
+        public ActionResult M_MentorConfirmDelete(int id)
         {
+            Session["MentorId"] = id;
+            return View();
+        }
+       
+        public ActionResult M_MentorDelete()
+        {
+            var mentorid = Session["MentorId"].ToString();
+            var id =int.Parse(mentorid);
             var db = new EducationPlatformEntities();
             var mentor=(from p in db.Mentors where p.Id == id select p).SingleOrDefault(); 
             db.Mentors.Remove(mentor);
             db.SaveChanges();
-            return RedirectToAction("M_MentorInformation");
+            return RedirectToAction("M_MentorLogIN");
         }
         [HttpGet]
         public ActionResult M_MentorUpdate(int id)
@@ -400,6 +409,17 @@ namespace EducationPlatform.Controllers
           
             db.SaveChanges();
             return RedirectToAction("M_MentorCourseDetails");
+        }
+
+
+       public ActionResult M_MentorSeeNotice(int id)
+        {
+            var db = new EducationPlatformEntities();
+
+            var institutionname = (from p in db.Mentors where p.Id == id select p.Institution).FirstOrDefault();
+            var notice =(from p in db.Notices where p.AnnouncedBy==institutionname select p).ToList();
+
+            return View(notice);
         }
 
 

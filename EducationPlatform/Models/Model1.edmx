@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EducationPlatformModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EducationPlatformModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admins">
           <Key>
             <PropertyRef Name="Id" />
@@ -17,13 +17,11 @@
           <Property Name="Photo" Type="image" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'EducationPlatform .dbo.AnswerScripts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="AnswerScripts">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StudentId" Type="int" />
           <Property Name="AssignmentId" Type="int" />
           <Property Name="Answer" Type="varchar(max)" />
@@ -342,18 +340,6 @@ warning 6002: The table/view 'EducationPlatform .dbo.AnswerScripts' does not hav
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Ratings_Mentors">
-          <End Role="Mentors" Type="Self.Mentors" Multiplicity="0..1" />
-          <End Role="Ratings" Type="Self.Ratings" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Mentors">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Ratings">
-              <PropertyRef Name="MentorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Ratings_Students">
           <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
           <End Role="Ratings" Type="Self.Ratings" Multiplicity="*" />
@@ -428,6 +414,7 @@ warning 6002: The table/view 'EducationPlatform .dbo.AnswerScripts' does not hav
         </Association>
         <EntityContainer Name="EducationPlatformModelStoreContainer">
           <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AnswerScripts" EntityType="Self.AnswerScripts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Assignments" EntityType="Self.Assignments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Carts" EntityType="Self.Carts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Certificates" EntityType="Self.Certificates" Schema="dbo" store:Type="Tables" />
@@ -443,15 +430,6 @@ warning 6002: The table/view 'EducationPlatform .dbo.AnswerScripts' does not hav
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ValidStudents" EntityType="Self.ValidStudents" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AnswerScripts" EntityType="Self.AnswerScripts" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-[AnswerScripts].[Id] AS [Id], 
-[AnswerScripts].[StudentId] AS [StudentId], 
-[AnswerScripts].[AssignmentId] AS [AssignmentId], 
-[AnswerScripts].[Answer] AS [Answer], 
-[AnswerScripts].[Date] AS [Date]
-FROM [dbo].[AnswerScripts] AS [AnswerScripts]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Carts_Courses" Association="Self.FK_Carts_Courses">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="Carts" EntitySet="Carts" />
@@ -496,10 +474,6 @@ FROM [dbo].[AnswerScripts] AS [AnswerScripts]</DefiningQuery>
             <End Role="Courses" EntitySet="Courses" />
             <End Role="Ratings" EntitySet="Ratings" />
           </AssociationSet>
-          <AssociationSet Name="FK_Ratings_Mentors" Association="Self.FK_Ratings_Mentors">
-            <End Role="Mentors" EntitySet="Mentors" />
-            <End Role="Ratings" EntitySet="Ratings" />
-          </AssociationSet>
           <AssociationSet Name="FK_Ratings_Students" Association="Self.FK_Ratings_Students">
             <End Role="Students" EntitySet="Students" />
             <End Role="Ratings" EntitySet="Ratings" />
@@ -525,8 +499,7 @@ FROM [dbo].[AnswerScripts] AS [AnswerScripts]</DefiningQuery>
             <End Role="ValidStudents" EntitySet="ValidStudents" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EducationPlatformModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
