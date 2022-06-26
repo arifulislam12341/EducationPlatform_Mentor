@@ -12,6 +12,16 @@
     <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
+  <EntityType Name="AnswerScript">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentId" Type="Int32" />
+    <Property Name="AssignmentId" Type="Int32" />
+    <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+  </EntityType>
   <EntityType Name="Assignment">
     <Key>
       <PropertyRef Name="Id" />
@@ -72,7 +82,7 @@
     <Property Name="MentorId" Type="Int32" />
     <Property Name="Material" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Module" Type="Double" />
+    <Property Name="Module" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Date" Type="DateTime" Precision="0" />
     <NavigationProperty Name="Cours" Relationship="Self.FK_CourseDetails_Mentors" FromRole="CourseDetails" ToRole="Courses" />
     <NavigationProperty Name="Mentor" Relationship="Self.FK_CourseDetails_Mentors1" FromRole="CourseDetails" ToRole="Mentors" />
@@ -129,7 +139,6 @@
     <NavigationProperty Name="Counselings" Relationship="Self.FK_Counselings_Mentors1" FromRole="Mentors" ToRole="Counselings" />
     <NavigationProperty Name="CourseDetails" Relationship="Self.FK_CourseDetails_Mentors1" FromRole="Mentors" ToRole="CourseDetails" />
     <NavigationProperty Name="Courses" Relationship="Self.FK_Courses_Mentors" FromRole="Mentors" ToRole="Courses" />
-    <NavigationProperty Name="Ratings" Relationship="Self.FK_Ratings_Mentors" FromRole="Mentors" ToRole="Ratings" />
   </EntityType>
   <EntityType Name="Notice">
     <Key>
@@ -154,7 +163,6 @@
     <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Date" Type="DateTime" Precision="0" />
     <NavigationProperty Name="Cours" Relationship="Self.FK_Ratings_Courses" FromRole="Ratings" ToRole="Courses" />
-    <NavigationProperty Name="Mentor" Relationship="Self.FK_Ratings_Mentors" FromRole="Ratings" ToRole="Mentors" />
     <NavigationProperty Name="Student" Relationship="Self.FK_Ratings_Students" FromRole="Ratings" ToRole="Students" />
   </EntityType>
   <EntityType Name="Result">
@@ -171,6 +179,7 @@
     <Property Name="CourseId" Type="Int32" />
     <Property Name="CourseName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="BackResult" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionId" Type="Int32" />
   </EntityType>
   <EntityType Name="Reviewstudent">
     <Key>
@@ -228,16 +237,6 @@
     <Property Name="CourseId" Type="Int32" />
     <NavigationProperty Name="Cours" Relationship="Self.FK_ValidStudents_Courses" FromRole="ValidStudents" ToRole="Courses" />
     <NavigationProperty Name="Student" Relationship="Self.FK_ValidStudents_Students" FromRole="ValidStudents" ToRole="Students" />
-  </EntityType>
-  <EntityType Name="AnswerScript">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="StudentId" Type="Int32" />
-    <Property Name="AssignmentId" Type="Int32" />
-    <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Date" Type="DateTime" Precision="0" />
   </EntityType>
   <Association Name="FK_Carts_Courses">
     <End Role="Courses" Type="Self.Cours" Multiplicity="0..1" />
@@ -407,18 +406,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Ratings_Mentors">
-    <End Role="Mentors" Type="Self.Mentor" Multiplicity="0..1" />
-    <End Role="Ratings" Type="Self.Rating" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Mentors">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Ratings">
-        <PropertyRef Name="MentorId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Ratings_Students">
     <End Role="Students" Type="Self.Student" Multiplicity="0..1" />
     <End Role="Ratings" Type="Self.Rating" Multiplicity="*" />
@@ -457,6 +444,7 @@
   </Association>
   <EntityContainer Name="EducationPlatformEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="AnswerScripts" EntityType="Self.AnswerScript" />
     <EntitySet Name="Assignments" EntityType="Self.Assignment" />
     <EntitySet Name="Carts" EntityType="Self.Cart" />
     <EntitySet Name="Certificates" EntityType="Self.Certificate" />
@@ -472,7 +460,6 @@
     <EntitySet Name="Students" EntityType="Self.Student" />
     <EntitySet Name="Transactions" EntityType="Self.Transaction" />
     <EntitySet Name="ValidStudents" EntityType="Self.ValidStudent" />
-    <EntitySet Name="AnswerScripts" EntityType="Self.AnswerScript" />
     <AssociationSet Name="FK_Carts_Courses" Association="Self.FK_Carts_Courses">
       <End Role="Courses" EntitySet="Courses" />
       <End Role="Carts" EntitySet="Carts" />
@@ -528,10 +515,6 @@
     <AssociationSet Name="FK_Transactions_Institutions" Association="Self.FK_Transactions_Institutions">
       <End Role="Institutions" EntitySet="Institutions" />
       <End Role="Transactions" EntitySet="Transactions" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Ratings_Mentors" Association="Self.FK_Ratings_Mentors">
-      <End Role="Mentors" EntitySet="Mentors" />
-      <End Role="Ratings" EntitySet="Ratings" />
     </AssociationSet>
     <AssociationSet Name="FK_Ratings_Students" Association="Self.FK_Ratings_Students">
       <End Role="Students" EntitySet="Students" />

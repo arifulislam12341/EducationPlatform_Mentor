@@ -17,9 +17,11 @@
 
     <table class="table table-hover">
         <thead>
-            <tr class="table-dark fs-4 text-center text-uppercase fw-bolder">
+            <tr class="table-dark  text-center text-uppercase fw-bolder">
                 <th scope="col">COURSE ID</th>
                 <th scope="col"> COURSE NAME</th>
+                <th></th>
+                <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -38,31 +40,41 @@
             @foreach (var i in Model)
             {
 
-                <tr class="text-center fs-5 fw-bolder">
+                <tr class="text-center fw-bolder">
                     <td>@i.Id</td>
                     <td>@i.Name</td>
 
 
 
-                    <td> <a class="btn btn-secondary fs-5 text-uppercase fw-bolder" href="~/M_Mentor/M_MentorAssignment/@i.Id" role="button">ASSAIGN ASSIGNMENT</a></td>
+                    <td> <a class="btn btn-secondary  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorAssignment/@i.Id" role="button">ASSAIGN ASSIGNMENT</a></td>
                     <td>
-                        <a class="btn btn-secondary fs-5 text-uppercase fw-bolder" href="~/M_Mentor/M_MentorStudentId/@i.Id" role="button">STUDENTS</a>
+                        <a class="btn btn-secondary  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorStudentId/@i.Id" role="button">STUDENTS</a>
                     </td>
                     <td>
-                        <a class="btn btn-secondary fs-5 text-uppercase fw-bolder" href="~/M_Mentor/M_MentorCounsiling/@i.Id" role="button">GIVE COUNSILING</a>
+                        <a class="btn btn-secondary  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorCounsiling/@i.Id" role="button">GIVE COUNSILING</a>
                     </td>
 
                     <td>
-                        <a class="btn btn-secondary fs-5 text-uppercase fw-bolder" href="~/M_Mentor/M_MentorNotice/@i.Id" role="button">POST NOTICE</a>
+                        <a class="btn btn-secondary  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorNotice/@i.Id" role="button">POST NOTICE</a>
                     </td>
                     <td>
-                        <a class="btn btn-secondary fs-5 text-uppercase fw-bolder" href="~/M_Mentor/M_MentorAssignmentList/@i.Id" role="button">POST RESULT</a>
+                        <a class="btn btn-secondary  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorAssignmentList/@i.Id" role="button">POST RESULT</a>
                     </td>
                     <td>
-                        <a class="btn btn-secondary fs-5 text-uppercase fw-bolder" href="~/M_Mentor/M_MentorRatings/@i.Id" role="button">VIEW RATINGS</a>
+                        <a class="btn btn-secondary  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorRatings/@i.Id" role="button">VIEW RATINGS</a>
                     </td>
                     <td>
-                        <a class="btn btn-secondary fs-5 text-uppercase fw-bolder" href="~/M_Mentor/M_MentorAllStudentResults/@i.Id" role="button">VIEW RESULTS</a>
+                        <a class="btn btn-secondary  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorAllStudentResults/@i.Id" role="button">VIEW RESULTS</a>
+                    </td>
+
+                    <td>
+                        <a class="btn btn-secondary  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorUploadModule/@i.Id" role="button">UPLOAD MODULE</a>
+
+                    </td>
+
+                    <td>
+                        <a class="btn btn-secondary  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorSeeUploadModule/@i.Id" role="button">SEE MODULE</a>
+
                     </td>
                 </tr>
             }

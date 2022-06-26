@@ -16,7 +16,7 @@
     <center><h1 class="fw-bolder">StudentInformation</h1></center>
     <table class="table table-hover">
         <thead>
-            <tr class="table-dark fs-4 text-center text-uppercase fw-bolder">
+            <tr class="table-dark  text-center text-uppercase fw-bolder">
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Address</th>
@@ -27,14 +27,14 @@
                 <th scope="col">Gender</th>
                 <th scope="col">Institution</th>
                 <th scope="col">IsValid</th>
-
+                <th></th>
             </tr>
         </thead>
         <tbody class="table-group-divider">
 
             @foreach (var p in Model)
             {
-                <tr class="text-center fs-5 fw-bolder">
+                <tr class="text-center  fw-bolder">
                     <th scope="row">@p.Id</th>
                     <td>@p.Name</td>
                     <td>@p.Address</td>
@@ -53,7 +53,9 @@
 
                 </tr>
             }
-            <a class="btn btn-danger fs-3 text-uppercase fw-bolder" href="~/M_Mentor/M_MentorLogOut" role="button">LOGOUT</a>
+            <a class="btn btn-success  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorInformation" role="button">BACK</a>
+
+            <a class="btn btn-danger  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorLogOut" role="button">LOGOUT</a>
 
         </tbody>
     </table>

@@ -4,24 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="22280066422f45a685f35cf6475be076" Name="Diagram1">
+      <Diagram DiagramId="612542a059f94f3daac7c56f9e6191bf" Name="Diagram1">
         <EntityTypeShape EntityType="EducationPlatformModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Assignment" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Cart" Width="1.5" PointX="5.25" PointY="24.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Certificate" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Counseling" Width="1.5" PointX="6" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.CourseDetail" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Cours" Width="1.5" PointX="3" PointY="23.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Institution" Width="1.5" PointX="6" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.AnswerScript" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Assignment" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Cart" Width="1.5" PointX="5.25" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Certificate" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Counseling" Width="1.5" PointX="6" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.CourseDetail" Width="1.5" PointX="5.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Cours" Width="1.5" PointX="3" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Institution" Width="1.5" PointX="6" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="EducationPlatformModel.Mentor" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Notice" Width="1.5" PointX="5.25" PointY="27.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Rating" Width="1.5" PointX="8.25" PointY="19" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Result" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Reviewstudent" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Notice" Width="1.5" PointX="5.25" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Rating" Width="1.5" PointX="8.25" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Result" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Reviewstudent" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EducationPlatformModel.Student" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Transaction" Width="1.5" PointX="8.25" PointY="24.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.ValidStudent" Width="1.5" PointX="8.25" PointY="28.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.AnswerScript" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Transaction" Width="1.5" PointX="8.25" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.ValidStudent" Width="1.5" PointX="8.25" PointY="27.625" IsExpanded="true" />
         <AssociationConnector Association="EducationPlatformModel.FK_Carts_Courses" ManuallyRouted="false" />
         <AssociationConnector Association="EducationPlatformModel.FK_Carts_Students" ManuallyRouted="false" />
         <AssociationConnector Association="EducationPlatformModel.FK_Certificates_Mentors" ManuallyRouted="false" />
@@ -36,7 +36,6 @@
         <AssociationConnector Association="EducationPlatformModel.FK_Transactions_Courses" ManuallyRouted="false" />
         <AssociationConnector Association="EducationPlatformModel.FK_ValidStudents_Courses" ManuallyRouted="false" />
         <AssociationConnector Association="EducationPlatformModel.FK_Transactions_Institutions" ManuallyRouted="false" />
-        <AssociationConnector Association="EducationPlatformModel.FK_Ratings_Mentors" ManuallyRouted="false" />
         <AssociationConnector Association="EducationPlatformModel.FK_Ratings_Students" ManuallyRouted="false" />
         <AssociationConnector Association="EducationPlatformModel.FK_Transactions_Students" ManuallyRouted="false" />
         <AssociationConnector Association="EducationPlatformModel.FK_ValidStudents_Students" ManuallyRouted="false" />

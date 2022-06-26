@@ -76,7 +76,7 @@
     <Property Name="MentorId" Type="int" />
     <Property Name="Material" Type="varchar" MaxLength="50" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
-    <Property Name="Module" Type="float" />
+    <Property Name="Module" Type="varchar(max)" />
     <Property Name="Date" Type="date" />
   </EntityType>
   <EntityType Name="Courses">
@@ -156,6 +156,7 @@
     <Property Name="CourseId" Type="int" />
     <Property Name="CourseName" Type="varchar" MaxLength="50" />
     <Property Name="BackResult" Type="varchar" MaxLength="50" />
+    <Property Name="InstitutionId" Type="int" />
   </EntityType>
   <EntityType Name="Reviewstudents">
     <Key>

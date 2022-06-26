@@ -126,6 +126,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Auth\MentorLoginAuth.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\M_MentorController.cs" />
     <Compile Include="Controllers\M_StudentController.cs" />
@@ -276,6 +277,8 @@
     <Content Include="Views\M_Mentor\M_MentorAllStudentResults.cshtml" />
     <Content Include="Views\M_Mentor\M_MentorConfirmDelete.cshtml" />
     <Content Include="Views\M_Mentor\M_MentorSeeNotice.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorUploadModule.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorSeeUploadModule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

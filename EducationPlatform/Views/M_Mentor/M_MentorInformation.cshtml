@@ -11,22 +11,74 @@
     <title>Admin Login</title>
 </head>
 <body>
+    <header>
 
-    <center> <h1 class="text-uppercase fw-bolder">MentorInformation</h1></center>
-    <a class="btn btn-secondary fs-3 text-uppercase fw-bolder" href="~/M_Mentor/M_MentorUpdate/@Model.Id" role="button">Update</a>
-    <a class="btn btn-warning fs-3 text-uppercase fw-bolder" href="~/M_Mentor/M_MentorConfirmDelete/@Model.Id" role="button">Delete</a>
-    <a class="btn btn-info fs-3 text-uppercase fw-bolder" href="~/M_Mentor/M_MentorCourseDetails" role="button">Course details</a>
-    <a class="btn btn-secondary fs-3 text-uppercase fw-bolder" href="~/M_Student/StudentAdd">STUDENT ADD </a>
-    <a class="btn btn-secondary fs-3 text-uppercase fw-bolder" href="~/M_Student/StudentInformation">STUDENT Information </a>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">HOME</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="btn btn-secondary  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorUpdate/@Model.Id" role="button">Update</a>
 
-    <a class="btn btn-info fs-3 text-uppercase fw-bolder" href="~/M_Mentor/M_MentorSeeNotice/@Model.Id">SEE NOTICE </a>
-    <a class="btn btn-danger fs-3 text-uppercase fw-bolder" href="~/M_Mentor/M_MentorLogOut " role="button">LOGOUT</a>
-    <br /><br />
-    <br /><br />
+                         
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-warning  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorConfirmDelete/@Model.Id" role="button">Delete</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-info  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorCourseDetails" role="button">Course details</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-secondary  text-uppercase fw-bolder" href="~/M_Student/StudentAdd">STUDENT ADD </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="btn btn-info  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorSeeNotice/@Model.Id">SEE NOTICE </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="btn btn-secondary  text-uppercase fw-bolder" href="~/M_Student/StudentInformation">STUDENT Information </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="btn btn-danger  text-uppercase fw-bolder" href="~/M_Mentor/M_MentorLogOut " role="button">LOGOUT</a>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+    </header>
+   <center> <h1 class="text-uppercase fw-bolder">Welcome @Model.Name</h1></center>
+   
 
     <table class="table table-hover">
         <thead>
-            <tr class="table-dark fs-4 text-center text-uppercase fw-bolder">
+            <tr class="table-dark  text-center text-uppercase fw-bolder">
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Address</th>
@@ -43,7 +95,7 @@
         <tbody class="table-group-divider">
 
 
-            <tr class="text-center fs-5 fw-bolder">
+            <tr class="text-center  fw-bolder">
                 <th scope="row">@Model.Id</th>
                 <td>@Model.Name</td>
                 <td>@Model.Address</td>
